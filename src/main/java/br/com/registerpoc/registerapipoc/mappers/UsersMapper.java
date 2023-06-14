@@ -1,8 +1,8 @@
-package br.com.registerpoc.registerapipoc.mappers.users;
+package br.com.registerpoc.registerapipoc.mappers;
 
 import br.com.registerpoc.registerapipoc.dtos.users.UserRequestDTO;
 import br.com.registerpoc.registerapipoc.dtos.users.UserResponseDTO;
-import br.com.registerpoc.registerapipoc.entities.UserEntity;
+import br.com.registerpoc.registerapipoc.entities.users.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;

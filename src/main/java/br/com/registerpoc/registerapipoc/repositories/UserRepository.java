@@ -1,6 +1,6 @@
 package br.com.registerpoc.registerapipoc.repositories;
 
-import br.com.registerpoc.registerapipoc.entities.UserEntity;
+import br.com.registerpoc.registerapipoc.entities.users.UserEntity;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

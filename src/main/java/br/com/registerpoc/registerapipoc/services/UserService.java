@@ -1,6 +1,6 @@
 package br.com.registerpoc.registerapipoc.services;
 
-import br.com.registerpoc.registerapipoc.entities.UserEntity;
+import br.com.registerpoc.registerapipoc.entities.users.UserEntity;
 
 import java.util.List;
 

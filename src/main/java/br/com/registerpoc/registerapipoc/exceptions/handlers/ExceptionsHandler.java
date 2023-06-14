@@ -2,6 +2,7 @@ package br.com.registerpoc.registerapipoc.exceptions.handlers;
 
 import br.com.registerpoc.registerapipoc.exceptions.AccountAlreadyApprovedException;
 import br.com.registerpoc.registerapipoc.exceptions.models.ErrorResponse;
+import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -52,6 +53,14 @@ public class ExceptionsHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(
                 Instant.now().toEpochMilli(),
                 exception.getMessage()
+        ));
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResponseEntity<ErrorResponse> handlerUsernameNotFound(ExpiredJwtException exception) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorResponse(
+                Instant.now().toEpochMilli(),
+                "expired token"
         ));
     }
 }

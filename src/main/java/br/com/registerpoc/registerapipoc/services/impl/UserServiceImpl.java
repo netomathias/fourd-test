@@ -1,13 +1,12 @@
 package br.com.registerpoc.registerapipoc.services.impl;
 
-import br.com.registerpoc.registerapipoc.entities.AccountStatusEnum;
-import br.com.registerpoc.registerapipoc.entities.RoleEnum;
-import br.com.registerpoc.registerapipoc.entities.UserEntity;
+import br.com.registerpoc.registerapipoc.entities.users.AccountStatusEnum;
+import br.com.registerpoc.registerapipoc.entities.users.RoleEnum;
+import br.com.registerpoc.registerapipoc.entities.users.UserEntity;
 import br.com.registerpoc.registerapipoc.exceptions.AccountAlreadyApprovedException;
 import br.com.registerpoc.registerapipoc.repositories.UserRepository;
 import br.com.registerpoc.registerapipoc.services.UserService;
 import lombok.RequiredArgsConstructor;
-import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -2,16 +2,14 @@ package br.com.registerpoc.registerapipoc.services.impl;
 
 import br.com.registerpoc.registerapipoc.dtos.auth.LoginRequestDTO;
 import br.com.registerpoc.registerapipoc.dtos.auth.LoginResponseDTO;
-import br.com.registerpoc.registerapipoc.entities.AccountStatusEnum;
-import br.com.registerpoc.registerapipoc.entities.RoleEnum;
-import br.com.registerpoc.registerapipoc.entities.UserEntity;
+import br.com.registerpoc.registerapipoc.entities.users.AccountStatusEnum;
+import br.com.registerpoc.registerapipoc.entities.users.UserEntity;
 import br.com.registerpoc.registerapipoc.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -47,6 +45,7 @@ public class AuthenticationService implements br.com.registerpoc.registerapipoc.
                     .token(jwtToken)
                     .build();
         } catch (UsernameNotFoundException e) {
+            log.error("bad credentials");
             throw new UsernameNotFoundException(e.getMessage());
         }
     }

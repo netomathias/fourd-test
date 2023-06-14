@@ -1,4 +1,4 @@
-package br.com.registerpoc.registerapipoc.entities;
+package br.com.registerpoc.registerapipoc.entities.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

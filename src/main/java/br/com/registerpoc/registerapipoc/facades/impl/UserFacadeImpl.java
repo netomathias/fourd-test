@@ -3,7 +3,7 @@ package br.com.registerpoc.registerapipoc.facades.impl;
 import br.com.registerpoc.registerapipoc.dtos.users.UserRequestDTO;
 import br.com.registerpoc.registerapipoc.dtos.users.UserResponseDTO;
 import br.com.registerpoc.registerapipoc.facades.UserFacade;
-import br.com.registerpoc.registerapipoc.mappers.users.UsersMapper;
+import br.com.registerpoc.registerapipoc.mappers.UsersMapper;
 import br.com.registerpoc.registerapipoc.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

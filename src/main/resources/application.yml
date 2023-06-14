@@ -17,3 +17,5 @@ management:
 jwt-token:
   secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION}
+
+client-origin: ${CLIENT_ORIGIN}
