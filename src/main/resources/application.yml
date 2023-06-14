@@ -1,3 +1,15 @@
+swagger:
+  contact:
+    name: 'Ivonir Mathias Neto'
+    email: "ivonir.mathiasneto@gmail.com"
+  app:
+    name: FourD Challenge
+    version: 1.0.0
+    description: Api desenvolvida para desafio técnico da fourd.
+  base:
+    package: br.com.fourdchallenge.backofficeapi.controllers
+
+
 spring:
   data:
     mongodb:

@@ -3,7 +3,7 @@ version: '3.7'
 services:
   server:
     build: .
-    container_name: register-api
+    container_name: fourd-challenge-api
     volumes:
       - ./tmp:/app/tmp
       - ./log:/app/log
