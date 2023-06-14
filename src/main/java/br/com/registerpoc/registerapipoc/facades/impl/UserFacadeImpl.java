@@ -26,4 +26,9 @@ public class UserFacadeImpl implements UserFacade {
     public List<UserResponseDTO> getAll() {
         return userService.getAll().stream().map(usersMapper::EntityToDTO).toList();
     }
+
+    @Override
+    public UserResponseDTO approveAccount(String email) {
+        return usersMapper.EntityToDTO(userService.approveAccount(email));
+    }
 }

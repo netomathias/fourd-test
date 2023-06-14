@@ -9,4 +9,5 @@ public interface UserFacade {
 
     UserResponseDTO save(UserRequestDTO userRequestDTO);
     List<UserResponseDTO> getAll();
+    UserResponseDTO approveAccount(String email);
 }

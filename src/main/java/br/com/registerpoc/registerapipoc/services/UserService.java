@@ -6,9 +6,10 @@ import java.util.List;
 
 public interface UserService {
 
+    UserEntity update(String id, UserEntity userEntity);
     UserEntity save(UserEntity userEntity);
-    UserEntity update(Long id, UserEntity userEntity);
     List<UserEntity> getAll();
-    UserEntity getById(Long id);
-    void deleteById(Long id);
+    UserEntity getById(String id);
+    void deleteById(String id);
+    UserEntity approveAccount(String email);
 }

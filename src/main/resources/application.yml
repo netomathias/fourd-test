@@ -1,13 +1,19 @@
 spring:
-  datasource:
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USER}
-    password: ${DATABASE_PW}
-    driverClassName: org.h2.Driver
-  jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI}
 
-jwt-secret: ${JWT_SECRET}
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path:
+      path-mapping:
+        health: /healthcheck
+
+
+jwt-token:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
