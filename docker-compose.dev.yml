@@ -2,9 +2,34 @@ version: '3.7'
 
 services:
   server:
-    entrypoint: ["sh", "-c", "java -cp app:app/lib/* br.com.registerpoc.registerapipoc.RegisterApiPocApplication"]
+    entrypoint: ["sh", "-c", "java -cp app:app/lib/* br.com.fourdchallenge.backofficeapi.FourdChallengeApplication"]
     environment:
-      - DATABASE_URL=jdbc:h2:mem:mydb
-      - DATABASE_USER=admin
-      - DATABASE_PW=admin
-      - JWT_SECRET=put your secret here
+      - JWT_SECRET=aGc5YTBqZnRlYTFocTd6dXNjbHE4bXE0bm9pZ3F2NGtnN3g1b2FlY243YWdtc3BueDdvMDRsZmM0b3RsZmNrdWt4azRuajFnd3g4M3I2bnl0dHprNWUwemFwYnJzc2J3ZjZ1d2I3ZWZ3OXRiM2F6d3B4emFyZHYyaWgwZmJxNjQ=
+      - JWT_EXPIRATION=1440000
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo_container:27017/backoffice_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - CLIENT_ORIGIN=http://localhost:3000
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: 'mongo'
+    container_name: mongo_container
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db
+
+  redis:
+    image: 'redis'
+    container_name: redis_container
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./cache:/data
+

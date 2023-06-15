@@ -1,13 +1,41 @@
-spring:
-  datasource:
-    url: ${DATABASE_URL}
-    username: ${DATABASE_USER}
-    password: ${DATABASE_PW}
-    driverClassName: org.h2.Driver
-  jpa:
-    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
+swagger:
+  contact:
+    name: 'Ivonir Mathias Neto'
+    email: "ivonir.mathiasneto@gmail.com"
+  app:
+    name: FourD Challenge
+    version: 1.0.0
+    description: Api desenvolvida para desafio técnico da fourd.
+  base:
+    package: br.com.fourdchallenge.backofficeapi.controllers
 
-jwt-secret: ${JWT_SECRET}
+
+spring:
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI}
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+  cache:
+    type: redis
+
+
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      base-path:
+      path-mapping:
+        health: /healthcheck
+
+
+jwt-token:
+  secret: ${JWT_SECRET}
+  expiration: ${JWT_EXPIRATION}
+
+client-origin: ${CLIENT_ORIGIN}
+
