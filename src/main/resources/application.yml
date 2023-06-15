@@ -14,6 +14,13 @@ spring:
   data:
     mongodb:
       uri: ${SPRING_DATA_MONGODB_URI}
+    redis:
+      host: ${REDIS_HOST}
+      port: ${REDIS_PORT}
+  cache:
+    type: redis
+
+
 
 management:
   endpoint:
@@ -31,3 +38,4 @@ jwt-token:
   expiration: ${JWT_EXPIRATION}
 
 client-origin: ${CLIENT_ORIGIN}
+

@@ -7,12 +7,16 @@ services:
       - JWT_SECRET=aGc5YTBqZnRlYTFocTd6dXNjbHE4bXE0bm9pZ3F2NGtnN3g1b2FlY243YWdtc3BueDdvMDRsZmM0b3RsZmNrdWt4azRuajFnd3g4M3I2bnl0dHprNWUwemFwYnJzc2J3ZjZ1d2I3ZWZ3OXRiM2F6d3B4emFyZHYyaWgwZmJxNjQ=
       - JWT_EXPIRATION=1440000
       - SPRING_DATA_MONGODB_URI=mongodb://mongo_container:27017/management-api
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - CACHE_TTL=300
       - CLIENT_ORIGIN=http://localhost:3000
     ports:
       - '8080:8080'
 
     depends_on:
       - db
+      - redis
 
 
   db:
@@ -22,4 +26,13 @@ services:
       - '27017:27017'
     volumes:
       - ./data/db:/data/db
+
+  redis:
+    image: 'redis'
+    container_name: redis_container
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - ./redis:/data
 

@@ -5,6 +5,7 @@ import br.com.fourdchallenge.backofficeapi.repositories.ClassesRepository;
 import br.com.fourdchallenge.backofficeapi.services.ClassesService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +24,7 @@ public class ClassesServiceImpl implements ClassesService{
     }
 
     @Override
+    @Cacheable("classes")
     public List<ClassesEntity> getAllByUsername(String email) {
         log.info("getting all classes for user - {}", email);
         return classesRepository.findAllByUserEmail(email);
