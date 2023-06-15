@@ -26,4 +26,4 @@ http://localhost:8080/healthcheck
 
 ### Observações
 
-* A secret do JWT está exposta no repo no docker compose dev apenas para facilitar os testes na máquina de quem for avaliar.
+* As variáveis de ambiente estão hardcoded apenas para fins de avaliação e considerando um ambiente de desenvolvimento. Num cenário real, as variáveis seriam setadas num ambiente em cloud numa ferramenta de orquestração de containers como kubernetes ou fargate, por exemplo.
