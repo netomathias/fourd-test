@@ -1,5 +1,4 @@
 # FourD Challenge
-Projeto desenvolvido para gercimaneto de cadastro para empresa Oni-Service.
 
 ### Pré-requisitos
 O que você precisa instalar para rodar o projeto?
